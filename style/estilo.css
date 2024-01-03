@@ -1,0 +1,187 @@
+@charset "UTF-8";   /*config. para utilização de caracteres especiais*/
+
+/*importante config p/ usar fontes baixadas no google fonts*/
+@font-face{ 
+    font-family:'BebasNeue-Regular';
+    src:url('../Material de apoio/fontes/BebasNeue-Regular.ttf')format('woff2');
+    font-weight: normal; /*configurando peso da fonte - tipo de negrito para sem negrito*/
+}
+@font-face{
+font-family: 'idroid';
+    src:url('../Material de apoio/fontes/idroid.otf')format('opentype');
+    font-weight: normal;
+}/*------*/
+
+:root{  /*váriaveis em CSS*/
+/*cores*/
+    --cor01: #C5EBD6;
+    --cor02: #89E1AD;
+    --cor03: #3DDC84;
+    --cor04: #2FA866;
+    --cor05: #1A5C37;
+    --cor06: #013D1E;
+/*fontes*/
+    --fonte-padrao:arial, verdana, helvetica, sans-serif;
+    --fonte-destaque:'BebasNeue-Regular', cursive;
+    --fonte_android: 'Idroid', cursive;
+}
+/*----------*/
+*{  /*config. globais - box sizing*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}/*-------*/
+body{
+    background-color: var(--cor01);
+    font-family: var(--fonte-padrao);
+}
+p{
+    margin: 15px 0px;
+}
+a{
+    cursor: pointer;
+}
+/*****************/
+.link_externo::after{
+    content: '\00a0\1F517'; /*emoji apos os links com target: _blanck (links externos)*/
+}
+header{
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05));   /*cor de fundo em estilo gradiente*/
+    min-height: 150px; /*altura minima*/
+    text-align: center; /*alinhamento de texto*/
+}
+header> h1{
+    font-weight: normal;
+    font-family: var(--fonte-destaque);
+    color: #fff;
+    padding-top: 40px;
+    margin-bottom: 0px;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.165); /*sombra no texto*/
+}
+header > p{
+    color: #fff;
+    font-size: 1.2em;
+    font-family: var(--fonte-padrao);
+    max-width: 500px;
+    margin: auto;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.165);
+}
+nav{
+    background-color: var(--cor05);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.22);
+    text-align: center;
+}
+nav a{
+    color: var(--cor01);
+    text-decoration: none;
+    padding: 10px;
+    padding-right: 120px; /*espaçamento entre os links do menu*/
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+nav a:hover{
+    background-color: var(--cor03);
+    color: var(--cor5);
+    border-radius: 05px; /*adicionando bordas arredondadas*/
+}
+main{
+    background-color: #fff;
+    min-width: 300px;   /*largura minima*/
+    max-width: 1000px;  /*largura máxima do conteudo */
+    margin: auto;   /*centralizando o conteudo*/
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.487); /*sombra na caixa*/
+    border-bottom-left-radius: 10px;    /*arredondando bordas - baixo-esquerda*/
+    border-bottom-right-radius: 10px;   /*arredondando bordas - baixo-direita*/
+}
+main p{
+    text-align: justify; /*alinhamento de texto*/
+    text-indent: 30px; /*indentando paragrafos*/
+    line-height: 2em; /*espaçamento entre linhas*/
+    font-size: 1em;
+}
+main h1{
+    color:var(--cor05);
+    font-family: var(--fonte_android);
+}
+main h2{
+    font-weight: normal;
+    font-family: var(--fonte_android);
+    color: var(--cor04);  
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor01), transparent); /*fundo em cores gradiente a transparente*/
+    text-indent: 8px;
+}
+main img{
+    width: 100%;
+}
+main .img_pequena{
+    /*width: 50%;*/
+    max-width:300px;
+    display: block;  /*por padrão o display da tag img ocupa toda linha página*/
+    margin: auto; /*centralizando ao centro da pagina de forma responsiva*/
+}
+main strong{ /*tudo que estiver dentro da div main com propriedade strong*/
+    color: var(--cor04);
+    font-weight: bold; /*peso da fonte - estilo de negrito na fonte*/
+}
+main a{
+    font-weight: bold;
+    text-decoration: none; /*removendo sublinhado dos links da div main*/
+    color: var(--cor05);
+}
+main a:hover{ /*defindindo configurações - estado - pseudoclasse*/
+    text-decoration: underline;
+    color: var(--cor02);
+}
+aside{
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 05px;
+    margin: 05px;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.337);
+}
+aside ul{
+    list-style-type: '\2714\00a0\00a0'; /*pegar o código no site do emojipedia - \00a0 - adiciona o espaço entre o emoji - obs.: configurações não disponíveis para todos os navegadores*/
+    list-style-position: inside; /*colocando os marcadores da lista por dentro da caixa (box)*/
+    columns: 2; /*quebrando a lista em 02 colunas*/ 
+}
+aside h3{
+    background-color: var(--cor04);
+    color: #fff;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /*movimentando h3 para "colar" nas bordas do box*/
+    border-radius: 10px 10px 0px 0px; /*adicionando bordas redondas em parte do box do h3*/
+}
+.videos_youtube{
+    margin-bottom: 30px;
+    background-color: var(--cor05);
+    margin: 0px -20px 30px -20px;
+    padding: 10px;
+    
+    position: relative;     /*trabalhando com posicionamento*/
+    padding-bottom: 55%;
+}
+.videos_youtube iframe{
+    position: absolute;     /*trabalhando com posicionamento*/
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+footer{
+    background-color: var(--cor05); /*variavel CSS para cor de fundo*/
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
